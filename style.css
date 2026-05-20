@@ -8,3 +8,6 @@ body {
     background-color: #FFD6B1;
 }
 
+nav{
+    display: flex;
+}
