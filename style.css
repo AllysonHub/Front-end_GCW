@@ -6,8 +6,135 @@
 
 body {
     background-color: #FFD6B1;
+    
 }
 
-nav{
+.hero {
+    background-image: url(assets/imgs/FundoQuiosque\ 1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+}
+
+.hero-conteudo {
+    text-align: center;
+    color: white;
+}
+
+.menu-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 100px;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    
+}
+
+.item-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    
+}
+
+.btn-reservar {
+    background: linear-gradient(to top, #D9711C, #F9A511);
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    outline: none;
+    border: 0.1px solid rgb(255, 179, 80);
+    cursor: pointer;
+    padding: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+h1 {
+    font-family: "Cinzel", serif;
+    font-weight: 200;
+    font-size: 5.3rem;
+    font-style: normal;
+    margin: 0px 200px 0px 200px;
+    line-height: 0.9;
+}
+
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1.9rem;
+    font-weight: 200;
+    font-style: normal;
+    margin: 0px 200px 0px 200px;
+    padding: 30px;
+}
+
+.btn-agendar {
+    background: linear-gradient(to top, #D9711C, #F9A511);
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    outline: none;
+    border: 0.1px solid rgb(255, 179, 80);
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 1%;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-equipamentos {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-left: 1%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.tag-section-preta{
+    color: #000;
+    font-family: "Cinzel", serif;
+    font-weight: 200;
+    font-size: 1rem;
+    font-style: normal;
+    margin: 10px auto;
+    text-align: center;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: black;
+    margin: 10px 0;
+    width: 260px;
+    margin: 20px auto;
 }
