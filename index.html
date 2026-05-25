@@ -15,16 +15,16 @@
 <body>
     <nav class="menu-navbar">
         <img class="logo" src="assets/imgs/Kahakai - PROTOTIPO GCW 1.png" alt="logo da empresa" srcset="">
-        <p class="item-nav"><a href="#">Home</a></p>
-        <p class="item-nav"><a href="#">Sobre</a></p>
-        <p class="item-nav"><a href="#">Serviços</a></p>
-        <p class="item-nav"><a href="#">Aulas de Surf</a></p>
-        <p class="item-nav"><a href="#">Avalaliações</a></p>
-        <button class="btn-reservar" type="button">Reservar agora</button>
+        <p class="item-nav"><a href="#home">Home</a></p>
+        <p class="item-nav"><a href="#sobre">Sobre</a></p>
+        <p class="item-nav"><a href="#servicos">Serviços</a></p>
+        <p class="item-nav"><a href="#aulas-surf">Aulas de Surf</a></p>
+        <p class="item-nav"><a href="#avaliacoes">Avalaliações</a></p>
+        <button class="btn-reservar" type="button"><a href="contato.html">Reservar agora</a></button>
     </nav>
     <main>
         <!-- main -->
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="hero-conteudo">
                 <h1 class="heaadline">Surf, liberdade e conforto em um só lugar! </h1>
                 <h3 class="p-headline">Aulas de surf para iniciantes e experientes, aluguel de equipamentos de praia e muito mais — praticidade, segurança e atendimento especializado.</h3>
@@ -36,7 +36,7 @@
         <!-- main -->
         <!-- sobre -->
         <section>
-            <hr class="linha-section">
+            <hr class="linha-section" id="sobre">
             <h4 class="tag-section-preta">EXPERIÊNCIA • CONFORTO • AVENTURA</h4>
             <hr class="linha-tag">
             <div class="container-principal">
@@ -57,18 +57,13 @@
                 <img class="img-sobre" src="assets/imgs/image 2.png" alt="Imagens do resort de praia">
                 </div>
 
-
             </div>
-            
-            
-            
-            
         </section>
         <!-- sobre -->
 
 
         <!-- experiencias -->
-        <section class="sec-experiencias">
+        <section class="sec-experiencias" id="servicos">
             
             <div>
                 <h4 class="tag-section" id="sec-xp" >EXPERIÊNCIAS DISPONÍVEIS / ALUGUEL DE ITENS</h4>
@@ -146,7 +141,7 @@
 
 
         <!-- escola de surf -->
-        <section class="sec-surf">
+        <section class="sec-surf" id="aulas-surf">
             <hr class="linha-section" >
             <h4 class="tag-section" id="escolasurf" >ESCOLA DE SURF</h4>
             <hr class="linha-tag" id="linhasurf">
@@ -175,7 +170,7 @@
         <!-- escola de surf -->
 
          <!-- escola de surf -->
-        <section class="sec-avaliacao">
+        <section class="sec-avaliacao" id="avaliacoes">
             <div class="card-avaliacao">
                 <img class="avaliacao" src="assets/imgs/avaliaçao.png" alt="" srcset="">
                 <img class="avaliacao" src="assets/imgs/avaliaçao.png" alt="" srcset="">
@@ -200,5 +195,38 @@
         
         
     </footer>
+
+<script>
+  // Aguarda a página carregar completamente
+  window.addEventListener('DOMContentLoaded', () => {
+    
+    // Seleciona absolutamente todos os links da barra de navegação
+    const links = document.querySelectorAll('.item-nav a, .btn-reservar a');
+
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Pega o valor do href (ex: #experiencias)
+        const id = this.getAttribute('href');
+        
+        // Se o link for apenas "#" ou vazio, não faz nada
+        if (id === '#' || !id.startsWith('#')) return;
+        
+        const destino = document.querySelector(id);
+        
+        if (destino) {
+          e.preventDefault(); // Para o pulo seco do navegador
+          
+          // Força a rolagem nativa do navegador até o elemento
+          destino.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+  });
+</script>
+
 </body>
 </html>
