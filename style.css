@@ -10,7 +10,7 @@ html {
 
 
 
-.btn-reservar a {
+button a {
     text-decoration: none;
     outline: none;
     color: #fff;
@@ -181,6 +181,15 @@ h4{
     margin: auto;
 }
 
+.linha-tag-card {
+    border: none;
+    height: 0.8px;
+    background-color: rgb(234, 234, 234);
+    width: 280px;
+    margin: auto;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.20);
+}
+
 .linha-section {
     border: none;
     height: 3px;
@@ -191,7 +200,7 @@ h4{
 .pos-headline {
     font-family: "Cinzel", serif;
     font-weight: 200;
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-style: normal;
     margin: 80px 0px 0px 200px;
     line-height: 1;
@@ -203,6 +212,47 @@ h4{
     font-size: 1.5rem;
     margin: 10px 50px 0px 200px;
 }
+
+.linha-tag-bruno {
+    width: 20%;
+    border: none;
+    height: 0.8px;
+    background-color: black;
+    margin: 3% auto 1% 200px;
+}
+
+.imgs-bruno {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 10px;
+    justify-content: space-around;
+    margin: 3% auto 5px 140px;
+}
+
+.foto-bruno {
+    width: 20%;
+    height: auto;
+    border-radius: 23px;
+    box-shadow: -1px 1px 20px rgba(0, 0, 0, 0.60);
+}
+
+.pos-headline-bruno {
+    font-family: "Montsserat", serif;
+    font-weight: 200;
+    margin: 0% auto 1% 170px;
+    padding: 0px auto 1px auto;
+    font-size: 3rem;
+    font-style: normal;
+}
+
+.paragrafo-phead-bruno {
+    font-family: "Montserrat", serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin: 10px 80px 0px 200px;
+}
+
 
 #sec-xp{
     color: #ffffff;
@@ -233,7 +283,9 @@ h4{
 
 .grid-cards{
     display: flex;
-    flex-direction: row;
+    margin: 1% 10%;
+    align-items: center;
+    justify-content: center;
     
 }
 
@@ -249,7 +301,7 @@ h4{
 .botoes-xp{
     display: flex;
     justify-content: center;
-    padding: 50px;
+    padding: 15px;
 }
 
 

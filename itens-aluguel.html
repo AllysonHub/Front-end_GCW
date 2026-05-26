@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Kahakai - Aulas de Surf</title>
+
+  <style>
+
+    /* =========================
+        RESET
+        ========================== */
+
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        }
+
+        html{
+        scroll-behavior:smooth;
+        }
+
+        body{
+        background:#bb8554;
+        font-family:'Montserrat', sans-serif;
+        min-height:100vh;
+        }
+
+        /* =========================
+        NAVBAR FIXA
+        ========================== */
+
+        .menu-navbar{
+        width:100%;
+        height:auto;
+
+        position:fixed;
+        top:0;
+        left:0;
+
+        z-index:999;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:35px;
+
+        padding:0 40px;
+
+        background:rgba(125, 85, 45, 0.96);
+        backdrop-filter:blur(10px);
+
+        border-bottom:2px solid #d6a06e;
+
+        box-shadow:0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        /* Logo */
+
+        .logo{
+        width:120px;
+        margin-right:30px;
+        }
+
+        /* Links nav */
+
+        .item-nav a{
+        text-decoration:none;
+        color:#f7e4cc;
+        font-size:15px;
+        font-weight:500;
+        transition:0.3s;
+        }
+
+        .item-nav a:hover{
+        color:#fff;
+        }
+
+        /* Botão reservar */
+
+        .btn-reservar{
+        border:none;
+        background:#efc192;
+        padding:12px 22px;
+        border-radius:8px;
+        cursor:pointer;
+        transition:0.3s;
+        }
+
+        .btn-reservar:hover{
+        transform:translateY(-2px);
+        background:#ffd4a8;
+        }
+
+        .btn-reservar a{
+        text-decoration:none;
+        color:#5a3415;
+        font-weight:700;
+        font-size:14px;
+        }
+
+        /* =========================
+        CONTAINER PRINCIPAL
+        ========================== */
+
+        .container{
+        width:100%;
+        max-width:1100px;
+
+        margin:auto;
+
+        /* ESSA PARTE AQUI RESOLVE O NAV
+            FICANDO POR CIMA */
+        padding:140px 35px 50px;
+        }
+
+        /* =========================
+        TOPO
+        ========================== */
+
+        .topo{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+
+        margin-bottom:20px;
+        }
+
+        /* Pesquisa */
+
+        .topo-left{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        }
+
+        .pesquisa{
+        width:270px;
+        height:42px;
+
+        border:none;
+        outline:none;
+
+        border-radius:10px;
+
+        padding-left:16px;
+
+        background:#ececec;
+
+        font-size:13px;
+        color:#555;
+
+        box-shadow:0 2px 5px rgba(0,0,0,0.12);
+        }
+
+        /* Filtro */
+
+        .filtro{
+        display:flex;
+        align-items:center;
+        gap:5px;
+
+        color:#3f2c1f;
+        font-size:14px;
+        font-weight:600;
+
+        cursor:pointer;
+        }
+
+        /* =========================
+        TITULO
+        ========================== */
+
+        .titulo{
+        font-family:'Cinzel', serif;
+        font-size:33px;
+        color:#f6e0c7;
+        font-weight:500;
+        letter-spacing:1px;
+        }
+
+        .linha{
+        width:320px;
+        height:2px;
+
+        background:#d7a87b;
+
+        margin:0 auto 35px auto;
+
+        opacity:0.7;
+        }
+
+        /* =========================
+        CARD PRINCIPAL
+        ========================== */
+
+        .card-destaque{
+        background:#efc192;
+
+        border-radius:8px;
+
+        padding:18px;
+
+        display:flex;
+        gap:20px;
+
+        box-shadow:0 3px 8px rgba(0,0,0,0.25);
+
+        margin-bottom:40px;
+
+        border:2px solid #d49d6b;
+        }
+
+        /* Imagem principal */
+
+        .card-destaque img{
+        width:420px;
+        height:260px;
+
+        object-fit:cover;
+
+        border-radius:6px;
+        }
+
+        /* Conteúdo */
+
+        .conteudo-destaque{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        }
+
+        .conteudo-destaque h2{
+        font-family:'Cinzel', serif;
+        font-size:45px;
+        color:#2d1c12;
+        font-weight:500;
+        margin-bottom:10px;
+        }
+
+        .conteudo-destaque p{
+        color:#53321d;
+        font-size:15px;
+        line-height:1.5;
+        max-width:430px;
+        }
+
+        /* Parte inferior */
+
+        .bottom-card{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        margin-top:20px;
+        }
+
+        /* Estrelas */
+
+        .stars{
+        color:#ffc400;
+        font-size:35px;
+        letter-spacing:4px;
+        text-shadow: 0px 0px 10px rgba(0,0,0,0.55);
+        
+        }
+
+        /* Botão */
+
+        .btn{
+        background:#7d552d;
+        color:#fff2df;
+
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.30);
+
+        border:none;
+
+        padding:12px 26px;
+
+        border-radius:5px;
+
+        cursor:pointer;
+
+        font-size:16px;
+
+        transition:0.3s;
+
+        font-family:'Cinzel', serif;
+        }
+
+        .btn:hover{
+        background:#5e3e1f;
+        transform:scale(1.03);
+        }
+
+        /* =========================
+        GRID DOS CARDS
+        ========================== */
+
+        .grid-cards{
+        display:grid;
+
+        grid-template-columns:repeat(2, 1fr);
+
+        gap:35px;
+        }
+
+        /* =========================
+        MINI CARD
+        ========================== */
+
+        .mini-card{
+        background:#efc192;
+
+        border-radius:8px;
+
+        display:flex;
+        gap:15px;
+
+        padding:12px;
+
+        border:2px solid #d49d6b;
+
+        box-shadow:0 3px 6px rgba(0,0,0,0.25);
+
+        /* TODOS DO MESMO TAMANHO */
+        height:180px;
+        }
+
+        /* Imagem mini */
+
+        .mini-card img{
+        width:170px;
+        height:100%;
+
+        border-radius:5px;
+
+        object-fit:cover;
+        }
+
+        /* Conteúdo mini */
+
+        .mini-conteudo{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+
+        width:100%;
+        height:100%;
+        }
+
+        .mini-conteudo h3{
+        font-family:'Cinzel', serif;
+        font-size:22px;
+        color:#2d1c12;
+        font-weight:500;
+        }
+
+        .mini-conteudo p{
+        font-size:12px;
+        color:#5a3923;
+        line-height:1.4;
+        margin-top:5px;
+        }
+
+        /* Bottom mini */
+
+        .mini-bottom{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        }
+
+        /* Estrelas */
+
+        .mini-stars{
+        color:#ffc400;
+        font-size:14px;
+        letter-spacing:2px;
+        text-shadow: 0px 0px 5px rgba(0,0,0,0.55);
+        }
+
+        /* Botão */
+
+        .mini-btn{
+        background:#7d552d;
+        color:#fff2df;
+
+        text-shadow: 0px 0px 10px rgba(0,0,0,0.55);
+
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.30);
+
+        border:none;
+
+        padding:7px 14px;
+
+        border-radius:4px;
+
+        font-size:12px;
+
+        cursor:pointer;
+
+        font-family:'Cinzel', serif;
+
+        transition:0.3s;
+        }
+
+        .mini-btn:hover{
+        background:#5e3e1f;
+        }
+
+        /* =========================
+        RESPONSIVO
+        ========================== */
+
+        @media(max-width:1000px){
+
+        .menu-navbar{
+            gap:18px;
+            padding:0 15px;
+        }
+
+        .item-nav{
+            display:none;
+        }
+
+        .card-destaque{
+            flex-direction:column;
+        }
+
+        .card-destaque img{
+            width:100%;
+            height:320px;
+        }
+
+        .grid-cards{
+            grid-template-columns:1fr;
+        }
+
+        .titulo{
+            font-size:24px;
+        }
+
+        .mini-card{
+            height:190px;
+        }
+
+        }
+
+        @media(max-width:700px){
+
+        .topo{
+            flex-direction:column;
+            gap:20px;
+        }
+
+        .topo-left{
+            width:100%;
+            flex-direction:column;
+        }
+
+        .pesquisa{
+            width:100%;
+        }
+
+        .conteudo-destaque h2{
+            font-size:32px;
+        }
+
+        .stars{
+            font-size:28px;
+        }
+
+        .mini-card{
+            flex-direction:column;
+            height:auto;
+        }
+
+        .mini-card img{
+            width:100%;
+            height:220px;
+        }
+
+        }
+
+        footer{
+            font-family: "Montserrat", serif;
+            font-weight: 100;
+            text-align: center;
+            color: #ffffff;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            background-color: rgba(43, 43, 43, 0.60);
+        }
+
+        .footer-comp{
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        footer a{
+            color: #ffffff;
+            text-decoration: none;
+            outline: none;
+        }
+
+        .footer-itens{
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: center;
+            gap: 3%;
+            
+        }
+
+
+  </style>
+</head>
+
+<body>
+    <nav class="menu-navbar">
+        <img class="logo" src="assets/imgs/Kahakai - PROTOTIPO GCW 1.png" alt="logo da empresa" srcset="">
+        <p class="item-nav"><a href="#home">Home</a></p>
+        <p class="item-nav"><a href="#sobre">Sobre</a></p>
+        <p class="item-nav"><a href="#servicos">Serviços</a></p>
+        <p class="item-nav"><a href="#aulas-surf">Aulas de Surf</a></p>
+        <p class="item-nav"><a href="#avaliacoes">Avalaliações</a></p>
+        <button class="btn-reservar" type="button"><a href="contato.html">Reservar agora</a></button>
+    </nav>
+  <!-- =========================
+       CONTAINER GERAL
+  ========================== -->
+
+  <div class="container">
+
+    <!-- =========================
+         TOPO DA PÁGINA
+    ========================== -->
+
+    <div class="topo">
+
+      <!-- Lado esquerdo -->
+      <div class="topo-left">
+
+        <!-- Campo de pesquisa -->
+        <input 
+          type="text" 
+          class="pesquisa" 
+          placeholder="Pesquisar..."
+        >
+
+        <!-- Botão de filtros -->
+        <div class="filtro">
+          ☰ Filtros
+        </div>
+
+      </div>
+
+      <!-- Título -->
+      <h1 class="titulo">
+        Equipamentos de Praia
+      </h1>
+
+    </div>
+
+    <!-- Linha decorativa -->
+    <div class="linha"></div>
+
+
+
+    <!-- =========================
+         CARD PRINCIPAL
+    ========================== -->
+
+    <div class="card-destaque">
+
+      <!-- Imagem -->
+      <img 
+        src="assets/imgs/pranchas-card.png"
+        alt="Pranchas de surf"
+      >
+
+      <!-- Conteúdo -->
+      <div class="conteudo-destaque">
+
+        <div>
+
+          <!-- Título -->
+          <h2>Pranchas de Surf</h2>
+
+          <!-- Descrição -->
+          <p>
+            Se você busca uma prancha que une estabilidade,
+            remada fácil e excelente desempenho nas ondas,
+            acabou de encontrar. Desenvolvida para iniciantes
+            que querem evoluir rápido quanto para surfistas
+            intermediários que buscam diversão em dias de
+            ondas menores, este modelo oferece equilíbrio
+            perfeito entre flutuação e manobrabilidade.
+          </p>
+
+        </div>
+
+        <!-- Parte inferior -->
+        <div class="bottom-card">
+
+          <!-- Avaliação -->
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <!-- Botão -->
+          <button class="btn">
+            ALUGAR
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         GRID DOS CARDS PEQUENOS
+    ========================== -->
+
+    <div class="grid-cards">
+
+      <!-- CARD 1 -->
+      <div class="mini-card">
+
+        <img 
+          src="assets/imgs/bikespraia-card.png" 
+          alt="Bicicletas"
+        >
+
+        <div class="mini-conteudo">
+
+          <div>
+            <h3>Bicicletas</h3>
+
+            <p>
+              Aproveite o verão explorando a praia
+              com bicicletas confortáveis e ideais
+              para passeios na orla.
+            </p>
+          </div>
+
+          <div class="mini-bottom">
+
+            <div class="mini-stars">
+              ★★★★★
+            </div>
+
+            <button class="mini-btn">
+              ALUGAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CARD 2 -->
+      <div class="mini-card">
+
+        <img 
+          src="assets/imgs/cadeiras-card.png" 
+          alt="Cadeira de praia"
+        >
+
+        <div class="mini-conteudo">
+
+          <div>
+            <h3>Cadeira de Praia</h3>
+
+            <p>
+              Relaxe com conforto utilizando nossas
+              cadeiras resistentes e perfeitas para
+              aproveitar o dia.
+            </p>
+          </div>
+
+          <div class="mini-bottom">
+
+            <div class="mini-stars">
+              ★★★★★
+            </div>
+
+            <button class="mini-btn">
+              ALUGAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CARD 3 -->
+      <div class="mini-card">
+
+        <img 
+          src="assets/imgs/guardasois-card.png" 
+          alt="Guarda Sol"
+        >
+
+        <div class="mini-conteudo">
+
+          <div>
+            <h3>Guarda Sol</h3>
+
+            <p>
+              Proteção contra o sol com estilo e
+              praticidade para você curtir a praia
+              tranquilamente.
+            </p>
+          </div>
+
+          <div class="mini-bottom">
+
+            <div class="mini-stars">
+              ★★★★★
+            </div>
+
+            <button class="mini-btn">
+              ALUGAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CARD 4 -->
+      <div class="mini-card">
+
+        <img 
+          src="assets/imgs/mesas.png" 
+          alt="Mesa de centro"
+        >
+
+        <div class="mini-conteudo">
+
+          <div>
+            <h3>Mesa de Centro</h3>
+
+            <p>
+              Ideal para reunir amigos e família
+              enquanto aproveitam bebidas e petiscos
+              na areia.
+            </p>
+          </div>
+
+          <div class="mini-bottom">
+
+            <div class="mini-stars">
+              ★★★★★
+            </div>
+
+            <button class="mini-btn">
+              ALUGAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CARD 5 -->
+      <div class="mini-card">
+
+        <img 
+          src="assets/imgs/caiaque-card.png" 
+          alt="Caiaques"
+        >
+
+        <div class="mini-conteudo">
+
+          <div>
+            <h3>Caiaques</h3>
+
+            <p>
+              Viva aventuras incríveis no mar
+              com nossos caiaques seguros e
+              estáveis.
+            </p>
+          </div>
+
+          <div class="mini-bottom">
+
+            <div class="mini-stars">
+              ★★★★★
+            </div>
+
+            <button class="mini-btn">
+              ALUGAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- CARD 6 -->
+      <div class="mini-card">
+
+        <img 
+          src="assets/imgs/StandUpPaddl-card.png" 
+          alt="Stand Up Paddle"
+        >
+
+        <div class="mini-conteudo">
+
+          <div>
+            <h3>Stand Up Paddle</h3>
+
+            <p>
+              Diversão garantida nas águas com
+              equipamentos modernos e ideais para
+              todos os níveis.
+            </p>
+          </div>
+
+          <div class="mini-bottom">
+
+            <div class="mini-stars">
+              ★★★★★
+            </div>
+
+            <button class="mini-btn">
+              ALUGAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <footer>
+        <div class="footer-comp">
+            <div class="footer-itens">
+            <img class="logo" src="assets/imgs/Kahakai - PROTOTIPO GCW 1.png" alt="logotipo" srcset="">
+            <p class="p-footer">Devs: <br> Allyson Rocha dos Santos <br> Gabriel Palozi Gonçalves</p>
+            <p class="p-footer">Orientadores: <br> Profª Di Binda</p>
+            <p class="p-footer"><a href="#">GitHub</a> <a href="#">LinkedIn</a> <a href="#">Email | Contato</a></p>
+            </div>
+            <div>
+                <p class="p-footer">© Todos os Direitos Reservados | Etec Maria Cristina Medeiros 3° ano C</p>
+            </div>
+        </div>
+</body>
+</html>
