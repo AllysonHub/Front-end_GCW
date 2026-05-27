@@ -28,7 +28,7 @@
         }
 
         body{
-        background:#bb8554;
+        background: #FFB87A;
         font-family:'Montserrat', sans-serif;
         min-height:100vh;
         }
@@ -37,74 +37,53 @@
         NAVBAR FIXA
         ========================== */
 
-        .menu-navbar{
-        width:100%;
-        height:auto;
-
-        position:fixed;
-        top:0;
-        left:0;
-
-        z-index:999;
-
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        gap:35px;
-
-        padding:0 40px;
-
-        background:rgba(125, 85, 45, 0.96);
-        backdrop-filter:blur(10px);
-
-        border-bottom:2px solid #d6a06e;
-
-        box-shadow:0 4px 12px rgba(0,0,0,0.25);
+        .menu-navbar {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          z-index: 1000;
+          background-color: transparent;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 0.5% 100px;
+          box-sizing: border-box;
+          font-size: 1.2rem;
+          background-color: rgba(0, 0, 0, 0.5);
+          background-blend-mode: darken;
+          
         }
 
-        /* Logo */
+        .item-nav a {
+          color: #fff;
+          text-decoration: none;
+          font-family: "Montserrat", sans-serif;
+          font-optical-sizing: auto;
+          font-weight: 400;
+          
+        }
+        .btn-reservar {
+          background: linear-gradient(to top, #D9711C, #F9A511);
+          color: #fff;
+          font-weight: 400;
+          font-size: 1.3rem;
+          border-radius: 10px;
+          outline: none;
+          border: 0.1px solid rgb(255, 179, 80);
+          cursor: pointer;
+          padding: 10px;
+          font-family: "Montserrat", sans-serif;
+          font-optical-sizing: auto; 
 
-        .logo{
-        width:120px;
-        margin-right:30px;
         }
 
-        /* Links nav */
-
-        .item-nav a{
-        text-decoration:none;
-        color:#f7e4cc;
-        font-size:15px;
-        font-weight:500;
-        transition:0.3s;
+        #btn-reservar a{
+          text-decoration: none;
+          outline: none;
+          color: #fff;
         }
 
-        .item-nav a:hover{
-        color:#fff;
-        }
 
-        /* Botão reservar */
-
-        .btn-reservar{
-        border:none;
-        background:#efc192;
-        padding:12px 22px;
-        border-radius:8px;
-        cursor:pointer;
-        transition:0.3s;
-        }
-
-        .btn-reservar:hover{
-        transform:translateY(-2px);
-        background:#ffd4a8;
-        }
-
-        .btn-reservar a{
-        text-decoration:none;
-        color:#5a3415;
-        font-weight:700;
-        font-size:14px;
-        }
 
         /* =========================
         CONTAINER PRINCIPAL
@@ -532,7 +511,7 @@
         <p class="item-nav"><a href="index.html#servicos">Serviços</a></p>
         <p class="item-nav"><a href="index.html#aulas-surf">Aulas de Surf</a></p>
         <p class="item-nav"><a href="index.html#avaliacoes">Avalaliações</a></p>
-        <button class="btn-reservar" type="button"><a href="contato.html">Reservar agora</a></button>
+        <button class="btn-reservar" id="btn-reservar" type="button"><a href="contato.html">Reservar agora</a></button>
     </nav>
   <!-- =========================
        CONTAINER GERAL
