@@ -210,26 +210,26 @@
     </footer>
 
 <script>
-  // Aguarda a página carregar completamente
+ 
   window.addEventListener('DOMContentLoaded', () => {
     
-    // Seleciona absolutamente todos os links da barra de navegação
+
     const links = document.querySelectorAll('.item-nav a, .btn-reservar a');
 
     links.forEach(link => {
       link.addEventListener('click', function(e) {
-        // Pega o valor do href (ex: #experiencias)
+       
         const id = this.getAttribute('href');
         
-        // Se o link for apenas "#" ou vazio, não faz nada
+        
         if (id === '#' || !id.startsWith('#')) return;
         
         const destino = document.querySelector(id);
         
         if (destino) {
-          e.preventDefault(); // Para o pulo seco do navegador
+          e.preventDefault(); 
           
-          // Força a rolagem nativa do navegador até o elemento
+         
           destino.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
