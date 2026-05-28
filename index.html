@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
     <title>Kahakai - Aulas de Surf</title>
 </head>
 <body>
@@ -58,7 +61,7 @@
                         <h3 class="item-sobre">✔ +8 Anos de Experiência</h3>
                         <h3 class="item-sobre">✔ +120 Aulas Realizadas</h3>
                         <h3 class="item-sobre">✔ Atendimento 100% Personalizado</h3>
-                        <h3 class="item-sobre">✔ PRODUTOS DE ALTA QUALIDADE</h3>
+                        <h3 class="item-sobre">✔ Produtos de alta qualidade</h3>
                     </div>
                 </div>
 
@@ -72,11 +75,14 @@
         <!-- sobre -->
 
 
+
+       
+
         <!-- experiencias -->
         <section class="sec-experiencias" id="servicos">
             
             <div>
-                <h4 class="tag-section" id="sec-xp" >EXPERIÊNCIAS DISPONÍVEIS / ALUGUEL DE ITENS</h4>
+                <h4 class="tag-section" id="sec-xp" >Aluguel de Itens / Aulas de surf</h4>
                 <hr class="linha-tag" id="linha-xp">
             </div>
 
@@ -149,11 +155,52 @@
         </section>
         <!-- experiencias -->
 
+         <!-- galeria de imgs -->
+
+        <section>
+            <h4 class="tag-section" id="galeria-sec" >Galeria de Imagens</h4>
+                <hr class="linha-tag">
+
+
+            <div class="responsive">
+                <div class="gallery">
+                    <img class="img-galeria" src="assets/imgs/img1.jpg" alt="">
+                </div>
+                <div class="gallery">
+                    <img class="img-galeria" src="assets/imgs/img2.jpg" alt="">
+                </div>
+                <div class="gallery">
+                    <img class="img-galeria" src="assets/imgs/img3.jpg" alt="">
+                </div>
+                <div class="gallery">
+                    <img class="img-galeria" src="assets/imgs/img4.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="responsive">
+                <div class="gallery">
+                    <img class="img-galeria" src="assets/imgs/img5.jpg" alt="">
+                </div>
+                <div class="gallery">
+                    <img class="img-galeria" src="assets/imgs/img6.jpg" alt="">
+                </div>
+                <div class="gallery">
+                    <img class="img-galeria" src="assets/imgs/img7.jpg" alt="">
+                </div>
+                <div class="gallery">
+                    <img class="img-galeria" src="assets/imgs/img8.jpg" alt="">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- galeria de imgs -->
+
 
         <!-- escola de surf -->
         <section class="sec-surf" id="aulas-surf">
             <hr class="linha-section" >
-            <h4 class="tag-section" id="escolasurf" >ESCOLA DE SURF</h4>
+            <h4 class="tag-section" id="escolasurf" >Escola de Surf</h4>
             <hr class="linha-tag" id="linhasurf">
 
             <div class="txts-secsurf">
@@ -207,26 +254,26 @@
     </footer>
 
 <script>
-  // Aguarda a página carregar completamente
+ 
   window.addEventListener('DOMContentLoaded', () => {
     
-    // Seleciona absolutamente todos os links da barra de navegação
+
     const links = document.querySelectorAll('.item-nav a, .btn-reservar a');
 
     links.forEach(link => {
       link.addEventListener('click', function(e) {
-        // Pega o valor do href (ex: #experiencias)
+       
         const id = this.getAttribute('href');
         
-        // Se o link for apenas "#" ou vazio, não faz nada
+        
         if (id === '#' || !id.startsWith('#')) return;
         
         const destino = document.querySelector(id);
         
         if (destino) {
-          e.preventDefault(); // Para o pulo seco do navegador
+          e.preventDefault(); 
           
-          // Força a rolagem nativa do navegador até o elemento
+         
           destino.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
