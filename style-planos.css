@@ -22,9 +22,39 @@ body {
 }
 
 main {
-    background-color: #FFB87A;
-    padding: 15px;
     padding-top: 85px;
+    padding-bottom: 50px;
+
+    background-image: url(assets/imgs/FundoQuiosque\ 1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    overflow: hidden;
+}
+
+main::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    z-index: 0;
+}
+main > * {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -332,11 +362,13 @@ h4{
 
 .grid-cards{
     display: flex;
+    flex-wrap: wrap; /* ADICIONA */
+    gap: 20px; /* ADICIONA */
+    
     margin: 3% 13%;
-    align-items: center;
+    
+    align-items: stretch;
     justify-content: center;
-    
-    
 }
 
 .card-img-top {
@@ -348,14 +380,19 @@ h4{
 .card {
     display: flex;
     flex-direction: column;
-    margin: 50px auto 50px auto;
+
+    width: 100%;
+    min-height: auto;
+
+    margin: 20px 0;
+
     padding: 10px;
     border-radius: 10px;
     border: 1px solid rgb(255, 223, 159);
+
     box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.30);
     background-color: #f79946;
 }
-
 
 
 .botoes-xp{
@@ -375,14 +412,18 @@ h4{
 /*=================================  FOOTER  ==========================================*/
 
 footer{
+    width: 100%;
+    height: auto;
+    padding: 1%;
     font-family: "Montserrat", serif;
     font-weight: 100;
     text-align: center;
     color: #ffffff;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    background-color: rgba(43, 43, 43, 0.60);
-}   
+    background-color: rgba(0, 0, 0, 0.90);
+    background-blend-mode: darken;
+    position: relative; /* ADICIONA */
+    z-index: 1; /* ADICIONA */
+}
 
 .footer-comp{
     justify-content: center;
