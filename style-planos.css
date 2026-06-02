@@ -388,10 +388,11 @@ h4{
 
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid rgb(255, 223, 159);
+    border: 1px solid rgba(255, 139, 85, 0.445);
 
     box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.30);
-    background-color: #f79946;
+    background-color: rgba(255, 119, 56, 0.12);
+    background-blend-mode: darken;
 }
 
 
